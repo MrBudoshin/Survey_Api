@@ -1,0 +1,16 @@
+{% extends "app_survey_api/base.html" %}
+
+{% block title %}list{% endblock %}
+
+{% block content %}
+    {% if survey_list %}
+        {% for surveys in survey_list %}
+                <br>
+                <li>
+                    <a href="{% url 'survey_list_view' %}">{{ surveys }}</a>
+                </li>
+            {% endfor %}
+    {% else %}
+        <p>No entries</p>
+    {% endif %}
+{% endblock %}
